@@ -7,5 +7,51 @@
 </head>
 <body>
     <a href="index.html">Home</a>
+
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+
+        <label for="fname">Full Name</label>
+        <input type="text" id="fname" required>
+        <br>
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
+        <br>
+        <label for="phone">Phone Number</label>
+        <input type="phone" id="phone" required>
+        <br>
+        <label for="type">Service Type</label>
+        <select>
+            <option value="Tune-Up">Tune-Up</option>
+            <option value="Repair">Repair</option>
+        </select>
+        <br>
+        <label for="date">Drop-off Date</label>
+        <input type="date" id="date" required>
+        <br>
+        <label for="machine">Machine Type</label>
+        <input type="text" id="text" required>
+        <br>
+        <label for="brand">Brand</label>
+        <input type="text" id="brand" required>
+        <br>
+        <label for="model">Model Number</label>
+        <input type="text" id="model" required>
+        <br>
+        <label for="serial_number">Serial Number</label>
+        <input type="text" id="serial_number" required>
+        <br>
+        <label for="age">Age of Machine (in years)</label>
+        <input type="number" id="age" required>
+        <br>
+        <label for="problem_description">Enter a Description of Your Problem</label><br>
+        <textarea id="problem_description" name="problem_description" rows="3" cols="40" required placeholder="Either what kind of Tune-Up you need OR a description of your problem."></textarea>
+        <br>
+        <label for="equipment_image">Upload a Photo (Optional) Select up to 5</label><br>
+        <input type="file" id="equipment_image" name="equipment_image[]" accept="image/* multiple">
+        <br>
+        <input type="submit">
+
+    </form>
+
 </body>
 </html>
