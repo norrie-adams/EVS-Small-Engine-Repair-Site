@@ -4,42 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EVS Small Engine Repair</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>EVS Small Engine Repair</h1>
-        <nav>
-            <ul>
-                <li><a href="requests.html"> Request a Repair</a></li>
-                <li><a href="reviews.html">Reviews</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+        <h1 class="title">EVS Small Engine Repair</h1>
+        <nav class="navigation">
+                <a href="requests.html" class="button"> Request a Repair</a>
+                <a href="reviews.html" class="button">Reviews</a>
+                <a href="about.html" class="button">About</a>
+                <a href="contact.html" class="button">Contact</a>
         </nav>
     </header>
 
     <main>
-        <section>
+        <section class="intro">
             <h3>Welcome to EVS Small Engine Repair! I am ... I have been in business for ... </h3>
         </section>
 
         <section>
-            <h3>Our Services</h3>
-            <p>Card 1 - Lawn Mower</p>
-            <p>Card 2 - Weedwacker</p>
-            <p>Card 3 - idk</p>
+            <h3 class="services-header">Our Services</h3>
+            <div class="services-row">
+                <a href="requests.html" class="services" id="lawn-mower">Card 1 - Lawn Mower</a>
+                <a href="requests.html" class="services" id="weedwacker">Card 2 - Weedwacker</a>
+                <a href="requests.html" class="services" id="snow-blower">Card 3 - Snow Blower</a>
+            </div>
         </section>
 
         <section>
-            <h3>Reviews</h3>
-            <h5>5 Star - Fast and well done!</h5>
-            <h5>5 Star - Great Customer Service!</h5>
+            <h3 class="reviews-header">Reviews</h3>
+            <div class="reviews">
+                <h5 class="review-1">(EACH ONE IS GONNA BE A CARD) 5 Star - Fast and well done!</h5>
+                <h5 class="review-2">5 Star - Great Customer Service! (LINKS TO REVIEWS PAGE WHEN CLICKED ON)</h5>
+            </div>
         </section>
         
         <footer>
-            <h4>Contact Us:</h4>
-            <p>Phone Number</p>
-            <p>Location</p>
+            <h4 class="contact-header">Contact Us:</h4>
+            <a href="contact.html" class="contact" id="phone">Phone Number</a>
+            <a href="contact.html" class="contact" id="location">Location</a>
         </footer>
 
     </main>
