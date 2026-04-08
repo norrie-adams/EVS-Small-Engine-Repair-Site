@@ -2,57 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Request a Repair</title>
+    <title>Request a Repair - EVS</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <a href="index.html">Home</a>
+<header>
+    <nav class="nav-bar">
+        <a href="index.html" class="navbutton">Home</a>
+        <a href="requests.html" class="navbutton">Request a Repair</a>
+        <a href="reviews.html" class="navbutton">Reviews</a>
+        <a href="about.html" class="navbutton">About</a>
+        <a href="contact.html" class="navbutton">Contact</a>
+    </nav>
+</header>
 
-    <p>Please fill out every field in this form below</p>
-    <form action="/upload" method="POST" enctype="multipart/form-data">
+<main class="container" style="max-width: 700px;">
+    <h1 style="text-align: center;">Repair Request Form</h1>
+    <p style="text-align: center; margin-bottom: 20px;">Please fill out the fields below and we will get back to you.</p>
 
-        <label for="fname">Full Name</label>
-        <input type="text" id="fname" required>
-        <br>
-        <label for="email">Email</label>
-        <input type="email" id="email" required>
-        <br>
-        <label for="phone">Phone Number</label>
-        <input type="phone" id="phone" required>
-        <br>
-        <label for="type">Service Type</label>
+    <form action="#" method="GET"> <label>Full Name</label>
+        <input type="text" placeholder="Your Name" required>
+
+        <label>Email</label>
+        <input type="email" placeholder="email@example.com" required>
+
+        <label>Phone Number</label>
+        <input type="tel" placeholder="(555) 555-5555" required>
+
+        <label>Machine Type</label>
+        <input type="text" placeholder="Ex: Honda Lawn Mower" required>
+
+        <label>Service Type</label>
         <select>
-            <option value="Tune-Up">Tune-Up</option>
-            <option value="Repair">Repair</option>
+            <option value="tuneup">Full Tune-Up</option>
+            <option value="repair">Specific Repair</option>
         </select>
-        <br>
-        <label for="date">(Ideal) Drop-off Date</label>
-        <input type="date" id="date" required>
-        <br>
-        <label for="machine">Machine Type</label>
-        <input type="text" id="text" required>
-        <br>
-        <label for="brand">Brand</label>
-        <input type="text" id="brand" required>
-        <br>
-        <label for="model">Model Number</label>
-        <input type="text" id="model" required>
-        <br>
-        <label for="serial_number">Serial Number</label>
-        <input type="text" id="serial_number" required>
-        <br>
-        <label for="age">Age of Machine (in years)</label>
-        <input type="number" id="age" required>
-        <br>
-        <label for="problem_description">Enter a Description of Your Problem</label><br>
-        <textarea id="problem_description" name="problem_description" rows="3" cols="40" required placeholder="Either what kind of Tune-Up you need OR a description of your problem."></textarea>
-        <br>
-        <label for="equipment_image">Upload a Photo (Optional) Select up to 5</label><br>
-        <input type="file" id="equipment_image" name="equipment_image[]" accept="image/* multiple">
-        <br>
-        <input type="submit">
 
+        <label>Problem Description</label>
+        <textarea rows="4" placeholder="Tell us what is wrong..."></textarea>
+
+        <button type="submit" class="button" style="width: 100%; border: none; cursor: pointer;">Submit Request</button>
     </form>
-
+</main>
 </body>
 </html>
