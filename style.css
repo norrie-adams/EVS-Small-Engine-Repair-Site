@@ -7,11 +7,21 @@
     padding: 0;
 }
 
-body {
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     background: #f0f4f8; /* Light gray-blue for better contrast */
     font-family: "Lato", sans-serif;
     color: #333;
     line-height: 1.6;
+}
+
+main {
+    flex: 1;
 }
 
 /* Global Navigation */
@@ -89,16 +99,20 @@ header {
 .services-header {
     text-align: center;
     font-size: 3rem;
-    margin-bottom: 40px;
+    margin-bottom: 18px;
 }
 
 .services-row {
     display: flex;
     justify-content: space-between;
-    gap: 15px;
+    width: 125%;
+    gap: 20px; /* This forces space even if the cards want to grow */
+    padding: 20px; /* Keeps the cards from touching the very edge of the red box */
+    margin-left: -12.5%;
 }
 
 .service-card {
+    scale: 1.01;
     background-color: white;
     padding: 15px;
     border-radius: 15px;
@@ -119,6 +133,14 @@ header {
     height: 150px;
     object-fit: cover;
     border-radius: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.reviews-header {
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 35px;
 }
 
 /* Reviews */
@@ -155,18 +177,30 @@ input, select, textarea {
 }
 
 /* Footer */
+.contact-header {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    left: 50%;
+    right: 50%;
+    width: 100%;
+}
+
 footer {
+    width: 100%;
     background: #333;
     color: white;
     text-align: center;
     padding: 40px 0;
-    margin-top: 60px;
+    margin-top: 40px;
+    margin-bottom: 0;
 }
 
 .footer-links {
     display: flex;
-    justify-content: center;
     gap: 30px;
+    justify-content: center;
     margin-top: 20px;
 }
 
