@@ -211,3 +211,52 @@ footer {
     padding: 10px 20px;
     border-radius: 5px;
 }
+
+.reviews-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+    width: 35%;
+}
+
+.reviews-page-header {
+    text-align: center;
+    font-size: 30px;
+    text-decoration: none;
+    color: black;
+}
+
+.reviews-overview {
+    display: grid;
+    /* Column 1: Number | Column 2: The text info */
+    grid-template-columns: auto auto; 
+    /* Column 1 stays the same, Column 2 has two rows */
+    grid-template-rows: 1fr 1fr; 
+    column-gap: 12px;
+    align-items: center; /* Centers the stars/text vertically within their rows */
+    width: max-content;
+
+}
+
+.rating-number {
+    grid-row: span 2; /* This makes the 3.5 take up the height of both rows */
+    font-size: 60px;
+    line-height: 1; /* Critical: keeps the 'box' of the number tight */
+    letter-spacing: -2px;
+}
+
+.total-reviews-google {
+    align-self: start; /* Pulls text to the top of the bottom row */
+    font-size: 14px;
+    color: #666;
+    line-height: 1;
+}
+
+.stars-google {
+    align-self: center; /* Pulls stars to the bottom of the top row */
+    font-size: 18px;
+    color: #f8ce0b;
+    line-height: 1;
+    gap: 2px;
+}
