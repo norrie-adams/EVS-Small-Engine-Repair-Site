@@ -89,7 +89,7 @@ header {
     text-align: center;
     color: white;
     background-color: rgba(0, 0, 0, 0.7);
-    padding: 5%; 
+    padding: 3%; 
     border-radius: 15px;
     width: 80%;
     max-width: 500px;
@@ -254,6 +254,13 @@ input, select, textarea {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-family: inherit; /* Inherits Lato font */
+}
+
+.message {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    font-size: 40px;
 }
 
 /* =========================================
