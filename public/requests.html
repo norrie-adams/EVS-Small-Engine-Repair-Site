@@ -25,28 +25,28 @@
 
         <form action="#" method="GET">
             <label>Full Name</label>
-            <input type="text" placeholder="Your Name" required>
+            <input type="text" placeholder="Your Name" id="name" required>
 
             <label>Email</label>
-            <input type="email" placeholder="email@example.com" required>
+            <input type="email" placeholder="email@example.com" id="email" required>
 
             <label>Phone Number</label>
-            <input type="tel" placeholder="(555) 555-5555" required>
+            <input type="tel" placeholder="(555) 555-5555" id="tel" required>
 
             <label>Machine Type</label>
-            <input type="text" placeholder="Ex: Honda Lawn Mower" required>
+            <input type="text" placeholder="Ex: Honda Lawn Mower" id="machine" required>
 
             <label>Service Type</label>
-            <select>
+            <select id="service">
                 <option value="tuneup">Full Tune-Up</option>
                 <option value="repair">Specific Repair</option>
             </select>
 
             <label>Problem Description</label>
-            <textarea rows="4" placeholder="Tell us what is wrong..."></textarea>
+            <textarea rows="4" placeholder="Tell us what is wrong..." id="problem_dec"></textarea>
 
             <label>Upload Photo(s) - Add up to 5</label>
-            <input type="file" multiple>
+            <input type="file" multiple id="img">
 
             <button type="submit" class="button" style="width: 100%; border: none; cursor: pointer;">Submit Request</button>
         </form>
