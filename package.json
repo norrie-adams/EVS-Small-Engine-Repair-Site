@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "node": "^26.1.0"
+  },
+  "name": "evs-small-engine-repair-site",
+  "version": "1.0.0",
+  "description": "This is a webstie I am building for my local repair shop",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/norrie-adams/EVS-Small-Engine-Repair-Site.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/norrie-adams/EVS-Small-Engine-Repair-Site/issues"
+  },
+  "homepage": "https://github.com/norrie-adams/EVS-Small-Engine-Repair-Site#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
