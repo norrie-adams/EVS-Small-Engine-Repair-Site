@@ -38,9 +38,9 @@ app.post('/api/submit', async (req, res) => {
 });
 
 // Admin page route
-app.get('/admin', (req, res) => {
+/* app.get('/admin', (req, res) => {
   res.sendFile('./admin.html', { root: '.' });
-});
+}); */
 
 // API endpoint to fetch all repair data
 app.get('/api/repairs', async (req, res) => {
