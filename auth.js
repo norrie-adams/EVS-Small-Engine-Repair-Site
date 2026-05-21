@@ -1,4 +1,4 @@
-const jwt = require("jsonwebtoken");
+/*const jwt = require("jsonwebtoken");
 
 app.post("/login", async (req, res) => {
     const { username, password } = req.body;
@@ -15,4 +15,4 @@ app.post("/login", async (req, res) => {
     );
 
     res.json({ token });
-});
+}); */

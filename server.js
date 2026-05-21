@@ -1,7 +1,10 @@
 import express from 'express';
 import pool from './db.js';
+import jwt from "jsonwebtoken";
+import dotenv from 'dotenv';
 const app = express();
 const PORT = 8000;
+dotenv.config();
 
 app.use(express.json());
 
@@ -41,6 +44,41 @@ app.post('/api/submit', async (req, res) => {
 /* app.get('/admin', (req, res) => {
   res.sendFile('./admin.html', { root: '.' });
 }); */
+
+app.post("/login", async (req, res) => {
+    const { username, password } = req.body;
+
+    const user = { id: 1, username: "norrie" };
+
+    const token = jwt.sign(
+        {
+            userId: user.id,
+            username: user.username
+        },
+        process.env.JWT_SECRET,
+        { expiresIn: "1h" }
+    );
+
+    res.json({ token });
+});
+
+function authMiddleware(req, res, next) {
+  const header = req.headers.authorization;
+
+  if (!header) return res.status(401);
+
+  const token = header.split(" ")[1];
+
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+
+    req.user = decoded;
+
+    next();
+  } catch (err) {
+    return res.sendStatus(403);
+  }
+} 
 
 // API endpoint to fetch all repair data
 app.get('/api/repairs', async (req, res) => {
