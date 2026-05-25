@@ -45,7 +45,7 @@ app.post('/api/submit', async (req, res) => {
   res.sendFile('./admin.html', { root: '.' });
 }); */
 
-app.post("/login", async (req, res) => {
+/* app.post("/login", async (req, res) => {
     const { username, password } = req.body;
 
     const user = { id: 1, username: "norrie" };
@@ -78,7 +78,7 @@ function authMiddleware(req, res, next) {
   } catch (err) {
     return res.sendStatus(403);
   }
-} 
+} */
 
 // API endpoint to fetch all repair data
 app.get('/api/repairs', async (req, res) => {
