@@ -42,10 +42,24 @@ app.post('/api/submit', async (req, res) => {
   }
 });
 
-// Admin page route
-/* app.get('/admin', (req, res) => {
-  res.sendFile('./admin.html', { root: '.' });
-}); */
+// Auth Middleware
+function authMiddleware(req, res, next) {
+  const header = req.headers.authorization;
+
+  if (!header) return res.status(401).json({ message: 'Missing authorization token' });
+
+  const token = header.split(" ")[1];
+
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+
+    req.user = decoded;
+
+    next();
+  } catch (err) {
+    return res.sendStatus(403);
+  }
+}
 
 // Login Route
 app.post("/login", async (req, res) => {
@@ -86,26 +100,8 @@ app.post("/login", async (req, res) => {
     }
 });
 
- /* function authMiddleware(req, res, next) {
-  const header = req.headers.authorization;
-
-  if (!header) return res.status(401);
-
-  const token = header.split(" ")[1];
-
-  try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-
-    req.user = decoded;
-
-    next();
-  } catch (err) {
-    return res.sendStatus(403);
-  }
-} */
-
 // API endpoint to fetch all repair data
-app.get('/api/repairs', async (req, res) => {
+app.get('/api/repairs', authMiddleware, async (req, res) => {
   try {
     const query = 'SELECT * FROM repairs ORDER BY id DESC;';
     const result = await pool.query(query);

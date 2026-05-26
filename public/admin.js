@@ -3,16 +3,40 @@ async function loadRepairs() {
     const contentDiv = document.getElementById('content');
     contentDiv.innerHTML = '<div class="loading">Loading repair data...</div>';
 
-    try {
-        const response = await fetch('/api/repairs');
-        
-        if (!response.ok) {
-            throw new Error(`Failed to fetch repairs: ${response.statusText}`);
-        }
+    const token = localStorage.getItem('adminToken');
 
-        const repairs = await response.json();
-        displayRepairs(repairs);
-        displayStats(repairs);
+    if (!token) {
+        window.location.href='/login.html';
+        return;
+    }
+
+    try {
+        const response = await fetch('http://localhost:8000/api/repairs', {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+
+        if (response.status === 401 || response.status === 403) {
+            localStorage.removeItem('adminToken');
+            window.location.href = '/login.html';
+            return;
+        } 
+
+        try {
+            if (!response.ok) {
+                throw new Error(`Failed to fetch repairs: ${response.statusText}`);
+                }
+
+            const repairs = await response.json();
+            displayRepairs(repairs);
+            displayStats(repairs);
+
+        } catch (error) {
+            console.error('Error:', error);
+            contentDiv.innerHTML = `<div class="error">❌ Error loading data: ${error.message}</div>`;
+        }
     } catch (error) {
         console.error('Error:', error);
         contentDiv.innerHTML = `<div class="error">❌ Error loading data: ${error.message}</div>`;
@@ -118,7 +142,12 @@ function displayStats(repairs) {
 
 // Export data to CSV
 function exportData() {
-    fetch('/api/repairs')
+    const token = localStorage.getItem('adminToken');
+    fetch('/api/repairs', {
+        headers: {
+            'Authorization': `Bearer ${token}`
+        }
+    })
         .then(response => response.json())
         .then(repairs => {
             if (!repairs || repairs.length === 0) {

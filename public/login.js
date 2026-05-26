@@ -24,6 +24,8 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
             messageElement.style.color = 'green';
             messageElement.innerText = data.message;
 
+            localStorage.setItem('adminToken', data.token);
+
             setTimeout(() => {
                 window.location.href = '/admin.html';
             }, 1000);
