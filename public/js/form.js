@@ -1,5 +1,3 @@
-console.log("Script.js has loaded successfully!");
-
 const form = document.querySelector('form'); 
 
 if (!form) {
@@ -8,7 +6,6 @@ if (!form) {
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault(); 
-  console.log("Form submit event captured! The page should NOT jump now.");
 
   const formData = {
     name: document.getElementById('name').value,

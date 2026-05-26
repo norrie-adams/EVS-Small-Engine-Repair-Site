@@ -4,71 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #f1f5f9;
-            font-family: sans-serif;
-        }
-
-        .page-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 24px; 
-        }
-
-        h1 {
-            margin: 0;
-            font-size: 2rem;
-            color: #0f172a;
-        }
-
-        .login-card {
-            background-color: #3b82f6;
-            width: 350px;
-            padding: 30px;
-            border-radius: 4px;
-            color: white;
-            box-sizing: border-box;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-
-        input[type="text"],
-        input[type="password"] {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
-        .form-footer {
-            display: flex;
-            justify-content: flex-end;
-            margin-top: 15px;
-        }
-
-        button {
-            padding: 8px 16px;
-            border: none;
-            background-color: white;
-            color: black;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-    </style>
+    <link rel="stylesheet" href="login.css">
 </head>
 <body>
 
@@ -94,9 +30,9 @@
             </form>
         </div>
 
-        <p id="message" style="color: red;"></p>
+        <p id="message" class="message"></p>
     </div>
 
-    <script src="login.js"></script>
+    <script src="js/login.js"></script>
 </body>
 </html>
