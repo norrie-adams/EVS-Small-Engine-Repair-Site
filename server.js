@@ -69,7 +69,17 @@ app.post("/login", async (req, res) => {
           return res.status(401).json({ message: "Invalid username or password "});
         }
 
-        res.status(200).json({ message: "Login successful! Redirecting... "});
+        const token = jwt.sign(
+          { id: admin.id, username: admin.username },
+          process.env.JWT_SECRET,
+          { expiresIn: '1h' }
+        )
+
+        res.status(200).json({ 
+          message: "Login successful! Redirecting... ",
+          token: token
+        });
+
     } catch (error) {
       console.log(error);
       res.status(500).json({ message: "Server database error "});
