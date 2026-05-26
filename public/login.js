@@ -1,15 +1,15 @@
 document.getElementById('loginForm').addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const usernameInput = document.getELementById('username').value;
-    const passwordInput = document.getELementById('password').value;
-    const messageElement = document.getELementById('message');
+    const usernameInput = document.getElementById('username').value;
+    const passwordInput = document.getElementById('password').value;
+    const messageElement = document.getElementById('message');
 
     try {
 
-        const response = await fetch('http:/localhost:8000/login', {
+        const response = await fetch('http://localhost:8000/login', {
             method: 'POST',
-            header: {
+            headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
