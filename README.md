@@ -50,4 +50,4 @@ node server.js
 
 #### The application will be accessible locally at: http://localhost:8000
 
-**Website Video Breakdown - Release Date: June 25, 2026. View it at: [Norrie Builds YT Channel](https://www.youtube.com/@NorrieBuilds)**
+**Website Video Breakdown - Release Date: June 22 2026. View it at: [Norrie Builds YT Channel](https://www.youtube.com/@NorrieBuilds)**
