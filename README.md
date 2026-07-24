@@ -2,6 +2,14 @@
 
 A custom full stack application based on the EVS Small Engine Repair Shop.
 
+### Live Demo
+
+You can view the website **live** at https://evs-small-engine-repair-site.vercel.app
+
+> [!NOTE]
+> The website is frontend only. It will possibly contain a backend in the future. If you try to submit a form, it will give an error. 
+> Check back later for dedicated backend. Last updated 7/24/2026.
+
 ### Tech Stack / Features
 * **Frontend:** Clean HTML5, CSS3, and JavaScript (Fetch API) with a minimal white and blue website design.
 * **Backend:** Node.js with Express.js architecture (MVC Pattern).
