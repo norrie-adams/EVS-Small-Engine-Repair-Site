@@ -4,7 +4,8 @@ A custom full stack application based on the EVS Small Engine Repair Shop.
 
 ### Live Demo
 
-You can view the website **live** at https://evs-small-engine-repair-site.vercel.app
+You can view the **frontend** of the website at: https://evs-small-engine-repair-site.vercel.app
+An actual website demonstration is available at **[Norrie Builds YT Channel](https://www.youtube.com/@NorrieBuilds)**
 
 > [!NOTE]
 > The website is frontend only. It will possibly contain a backend in the future. If you try to submit a form, it will give an error. 
